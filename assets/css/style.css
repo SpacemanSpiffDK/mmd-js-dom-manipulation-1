@@ -1,6 +1,7 @@
 /* 
 	CSS by Dan Høegh
-	UCN MMD 2019 
+	UCN MMD 2020 
+
 */
 
 body {
@@ -10,294 +11,58 @@ body {
 	line-height: 1.4;
 }
 
+@media (min-width: 641px) {
+	body {
+		padding: .8rem;
+		font-size: 1rem;
+	}
+}
+
+
 /* test styles */
 
 body {
-	background-color: var(--frappe-color-surface);
+	background-color: var(--frp-color-background);	
 	padding: 0;
-	font-family: "Varela Round", sans-serif;
 }
 
 /* button */
-
 .btn {
 	display: inline-block;
 	text-decoration: none;
-	border-radius: var(--frappe-radius-component-s);
-	background-color: var(--frappe-color-primary);
-	color: var(--frappe-color-on-primary);
-	box-shadow: var(--frappe-shadow-depressed);
+	border-radius: var(--frp-radius-component-s);
+	background-color: var(--frp-color-primary);
+	color: var(--frp-color-on-primary);
+	box-shadow: var(--frp-shadow);
 	transition: box-shadow .2s ease-out;
-	font-size: 4.5vw;
 }
 
 .btn.mwa {
-	background-color: var(--frappe-color-accent);
-	color: var(--frappe-color-on-accent);
+	background-color: var(--frp-color-accent);
+	color: var(--frp-color-on-accent);
 }
 
 .btn:active {
-	box-shadow: var(--frappe-shadow-depressed);
+	box-shadow: var(--frp-shadow-depressed);
 }
 
-h1 {
-	margin-bottom: var(--frappe-density-m);
-}
-
-p {
-	margin-top: var(--frappe-density-m);
-	margin-bottom: var(--frappe-density-m);
-}
-
-p:last-child {
-	margin-bottom: 0;
-}
-
-nav {
-	background-color: var(--frappe-color-primary);
-	color: var(--frappe-color-on-primary);
-	font-size: 8vw;
-}
-
-nav > * {
-	display: inline-block;
-	padding: var(--frappe-density-s);
-	text-align: center;
-}
-
-nav a {
-	text-decoration: none;
-	color: var(--frappe-color-on-primary);
-	width: 15vw;
-}
-
-nav a i {
-	font-size: 6vw;
-}
-
-nav span {
-	width: 70vw;
-}
-
-h2 {
-	color: var(--frappe-color-primary);
-}
-
-h2 + p {
-	margin-top: var(--frappe-density-s)
-}
-
-.hero {
-	background-image: url(../images/vr-back.jpg);
-	/* Image: The Verge - https://www.theverge.com/2016/4/5/11358618/htc-vive-vr-review */
-	background-size: cover;
-	background-position: center;
-	height: 0;
-	padding-bottom: 70%;
-}
-
-.hero h1, .hero p {
-	color: #fff;
-	text-align: center;
-	margin: 0;
-}
-
-.hero h1 {
-	padding-top: 43vw;
-}
-
-main img {
-	max-width: 100%;
-}
-
-.article-image {
-	height: 0;
-	padding-bottom: 60%;
-	background-size: cover;
-	background-position: center;
-}
-
-.article-image.controllers {
-	background-image: url(../images/vr-controllers.jpg);
-}
-
-.article-image.lighthouses {
-	background-image: url(../images/vr-lighthouses.jpg);
-}
-
-.related-articles-list>div {
-	width: 50%;
-	margin-top: var(--frappe-density-s);
-}
-
-.related-articles-list .image {
-	background-size: cover;
-	background-position: center;
-	height: 0;
-	padding-bottom: 50%;
-}
-
-.related-articles-list .image-article-1 {
-	background-image: url(../images/related-1.jpg);
-}
-
-.related-articles-list .image-article-2 {
-	background-image: url(../images/related-2.jpg);
-}
-
-.related-articles-list .text {
-	padding: var(--frappe-density-s);
-	background-color: var(--frappe-color-secondary);
-	color: var(--frappe-color-on-secondary);
-}
-
-.newsletter {
-	text-align: center;
-}
-
-.newsletter h2 {
-	color: var(--frappe-color-accent)
-}
-
-.newsletter input[type="email"] {
-	width: 100%;
-	display: block;
-	padding: var(--frappe-density-s);
-	border-width: 0 0 3px 0;
-	border-color: var(--frappe-color-accent);
-	font-weight: 800;
-	font-size: 4.5vw;
-	text-align: center;
-}
-
-.newsletter input[type=submit] {
-	display: block;
-	width: 100%;
-	border: none;
-	padding: var(--frappe-density-s);
-	text-transform: uppercase;
-	margin: var(--frappe-density-l) 0;
-}
-
-footer {
-	background-color: var(--frappe-color-primary);
-	color: var(--frappe-color-on-primary);
-	padding: var(--frappe-density-m);
-	padding-top: var(--frappe-density-l);
-	text-align: center;
-}
-
-footer h2 {
-	color: var(--frappe-color-on-primary);
-}
-
-footer .icon-wrapper {
-	justify-content: center;
-}
-
-footer .icon-wrapper a {
-	text-decoration: none;
-	color: #fff;
-	padding: var(--frappe-density-s);
-}
-
-footer .icon-wrapper a i {
-	font-size: 10vw;
-}
-
-
-@media (min-width: 641px) {
-	body, 
-	.newsletter input[type="email"],
-	.newsletter input[type=submit]
-	{
-		font-size: 1rem;
-	}
-	
-	nav {
-		font-size: 2rem;
-	}
-	nav a i {
-		font-size: 2rem;
-	}
-	.hero h1 {
-		font-size: 4rem;
-	}
-	.hero p {
-		font-size: 1.5rem;
-	}
-	.related-articles-list>div {
-		width: 25%;
-	}
-	
-	.related-articles-list .image {
-		padding-bottom: 25%;
-	}
-	
-	.newsletter input[type=submit],
-	.newsletter input[type="email"] {
-		width: 20rem;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	footer .icon-wrapper a i {
-		font-size: 2rem;
-	}
-
-}
-
-@media (min-width: 1200px) {
-	.hero h1 {
-		font-size: 5rem;
-	}
-	.hero p {
-		font-size: 2rem;
-	}
-	
-	/* grid blocks */
-	.block-intro {
-		grid-area: blockIntro;
-	}
-	
-	.block-1-text {
-		grid-area: block1text;
-	}
-	.block-1-image {
-		grid-area: block1image;
-	}
-	.block-2-text {
-		grid-area: block2text;
-	}
-	.block-2-image {
-		grid-area: block2image;
-	}
-
-	.desktop-padding-xl {
-		padding: var(--frappe-density-l);
-	}
-
-	article {
-		display: grid;
-		grid-template-areas: 
-		'blockIntro blockIntro'
-		'block1text block1text'
-		'block2image block2text'
-		'block3image block3text';
-		grid-template-columns: 50% 50%;
-	}
-
-	.block-1-text p {
-		columns: 2;
-		column-gap: calc(var(--frappe-density-l) * 2);
+@media (min-width: 641px){
+	.flex > div {
+		width: 50%;
 	}
 }
 
-@media (min-width: 1350px) {
-	.desktop-padding-xl {
-		padding: var(--frappe-density-xl);
+@media (max-width: 640px){
+	.flex {
+		display: block;
 	}
-	.block-1-text p {
-		column-gap: calc(var(--frappe-density-xl) * 2);
+
+	.flex > div {
+		width: 100%;
+		margin-bottom: var(--frp-density-m);
 	}
+}
+
+h1, p {
+	margin-bottom: var(--frp-density-m);
 }
