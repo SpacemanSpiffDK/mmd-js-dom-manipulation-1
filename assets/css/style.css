@@ -26,6 +26,10 @@ body {
 	padding: 0;
 }
 
+article {
+	min-height: 100vh;
+}
+
 /* button */
 .btn {
 	display: inline-block;

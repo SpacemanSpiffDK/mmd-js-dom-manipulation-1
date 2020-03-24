@@ -8,7 +8,7 @@
 let elm_firstLI = document.querySelector('li');
 console.log(elm_firstLI);
 
-// we can use all css selectors
+// we can use all kinds of css selectors
 let elm_secondLI = document.querySelector('li:nth-child(2)');
 console.log(elm_secondLI);
 
@@ -24,26 +24,49 @@ console.log(elm_ul);
 let arr_li = document.querySelectorAll('li');
 console.log(arr_li);
 
+// we can loop through an array of elements in two different ways
+// the for-loop
 console.log('for-loop ---------------------');
 for (let i = 0; i < arr_li.length; i++){
     console.log(arr_li[i]);
 }
 
+// forEach-loop
 console.log('forEach-loop ---------------------');
+arr_li.forEach(function(elm){
+    console.log(elm);
+});
+
+// forEach-loop with i counter
+console.log('forEach-loop with i counter ---------------------');
+arr_li.forEach(function(elm, i){
+    console.log(i);
+    console.log(elm);
+});
+
+// the for-each-loop - with arrow function
+console.log('forEach-loop w/ arrow-function -------------');
 arr_li.forEach(elm => {
     console.log(elm);
 });
+
+// the for-each-loop - with arrow function and i counter
+console.log('forEach-loop w/ arrow-function and i counter-------------');
+arr_li.forEach((elm, index) => {
+    console.log(index);
+    console.log(elm);
+});
+
 
 // remove attribute
 let image = document.querySelector('#imageId');
 image.removeAttribute('class');
 
 // change an attribute
-// image.src="assets/images/blood-band.gif";
-// image.title="Blood band";
+image.src="assets/images/blood-band.gif";
+image.title="Blood band";
 
 // createElement()
-
 
 // appendChild()
 // removeChild()
