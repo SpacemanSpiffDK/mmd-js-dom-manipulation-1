@@ -24,6 +24,7 @@ body {
 body {
 	background-color: var(--frp-color-background);	
 	padding: 0;
+	color: var(--frp-color-primary);
 }
 
 article {

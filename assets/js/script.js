@@ -66,12 +66,35 @@ image.removeAttribute('class');
 image.src="assets/images/blood-band.gif";
 image.title="Blood band";
 
-// createElement()
-
-// appendChild()
 // removeChild()
+// remove the main tag from the HTML DOM - we do this by finding the parent element and then removing the child element
+const elmMain = document.querySelector('main');
+const elmArticleToBeRemoved = document.querySelector('#removeThisArticle');
+elmMain.removeChild(elmArticleToBeRemoved);
+
+// createElement()
+const newArticle = document.createElement('article'); // creates the element in memory, it is not placed in the DOM yet!
+const newHeadline = document.createElement('h1');
+newHeadline.textContent = 'My headline';
+console.log(newArticle);
+console.log(newHeadline);
+
+// appendChild() - adds an element as the last child to another element
+newArticle.appendChild(newHeadline); // append (add) newHeadline to newArticle as a child element
+console.log(newArticle);
+document.querySelector('main').appendChild(newArticle); // append newArticle to the main element in HTML
+
 // replaceChild()
+// Instead of using removeChild() and THEN using appendChild()
+// to replace an element, we can use replaceChild()
+const oldChildElement = document.querySelector('h1');
+const newChildElement = document.createElement('h2');
+newChildElement.textContent = 'Replaced headline';
+document.querySelector('article').replaceChild(newChildElement, oldChildElement);
+
 // cloneNode()
+
+
 // insertBefore()
 
 // addEventListener()
