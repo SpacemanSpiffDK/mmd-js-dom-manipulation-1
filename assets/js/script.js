@@ -27,19 +27,19 @@ console.log(arr_li);
 // we can loop through an array of elements in two different ways
 // the for-loop
 console.log('for-loop ---------------------');
-for (let i = 0; i < arr_li.length; i++){
+for (let i = 0; i < arr_li.length; i++) {
     console.log(arr_li[i]);
 }
 
 // forEach-loop
 console.log('forEach-loop ---------------------');
-arr_li.forEach(function(elm){
+arr_li.forEach(function (elm) {
     console.log(elm);
 });
 
 // forEach-loop with i counter
 console.log('forEach-loop with i counter ---------------------');
-arr_li.forEach(function(elm, i){
+arr_li.forEach(function (elm, i) {
     console.log(i);
     console.log(elm);
 });
@@ -63,39 +63,76 @@ let image = document.querySelector('#imageId');
 image.removeAttribute('class');
 
 // change an attribute
-image.src="assets/images/blood-band.gif";
-image.title="Blood band";
+image.src = "assets/images/blood-band.gif";
+image.title = "Blood band";
 
-// removeChild()
+
+// removeChild([element])
 // remove the main tag from the HTML DOM - we do this by finding the parent element and then removing the child element
 const elmMain = document.querySelector('main');
 const elmArticleToBeRemoved = document.querySelector('#removeThisArticle');
 elmMain.removeChild(elmArticleToBeRemoved);
 
-// createElement()
+// createElement([string with tag-name])
 const newArticle = document.createElement('article'); // creates the element in memory, it is not placed in the DOM yet!
 const newHeadline = document.createElement('h1');
 newHeadline.textContent = 'My headline';
 console.log(newArticle);
 console.log(newHeadline);
 
-// appendChild() - adds an element as the last child to another element
+// appendChild([element]) - adds an element as the last child to another element
 newArticle.appendChild(newHeadline); // append (add) newHeadline to newArticle as a child element
 console.log(newArticle);
 document.querySelector('main').appendChild(newArticle); // append newArticle to the main element in HTML
 
-// replaceChild()
+// replaceChild([newElement],[oldElement])
 // Instead of using removeChild() and THEN using appendChild()
 // to replace an element, we can use replaceChild()
 const oldChildElement = document.querySelector('h1');
 const newChildElement = document.createElement('h2');
 newChildElement.textContent = 'Replaced headline';
-document.querySelector('article').replaceChild(newChildElement, oldChildElement);
+oldChildElement.parentElement.replaceChild(newChildElement, oldChildElement);
 
-// cloneNode()
+// cloneNode([deep (boolean - should the descendants be cloned as well?)])
+// first we create a list to try this on
 
+const newList = document.createElement('ul');
+newList.id = 'ul3';
+for (i = 0; i < 5; i++){
+    const newListItem = document.createElement('li');
+    newListItem.textContent = `Number ${i+1}`;
+    newList.appendChild(newListItem);
+}
+const article = document.querySelector('article');
+article.appendChild(newList);
 
-// insertBefore()
+// Let's clone a list without deep
+const ul1 = document.querySelector('#ul3');
+const cloneShallow = ul1.cloneNode(false);
+cloneShallow.id = 'ul4';
+article.appendChild(cloneShallow);
+
+// Let's clone a list WITH deep
+const cloneDeep = document.querySelector('#ul3').cloneNode(true);
+cloneDeep.id = 'ul5';
+article.appendChild(cloneDeep);
+
+// insertBefore(newElement, referenceElement)
+// let's insert an h2 headline before #ul5
+const ul5 = document.querySelector('#ul5');
+const newHead = document.createElement('h2');
+newHead.textContent = 'Header - InsertBefore';
+ul5.parentElement.insertBefore(newHead, ul5);
+
+function youClicked(){
+    alert('You clicked!');
+}
 
 // addEventListener()
+const newListener = document.querySelector('li').addEventListener('click', youClicked);
+
 // removeEventListener()
+document.querySelector('li').removeEventListener('click', youClicked);
+
+// Read more here:
+// https://www.hongkiat.com/blog/dom-manipulation-javascript-methods/
